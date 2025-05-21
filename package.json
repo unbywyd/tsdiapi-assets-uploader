@@ -1,0 +1,53 @@
+{
+  "name": "@tsdiapi/assets-uploader",
+  "description": "A TSDIAPI plugin to extend API functionality with assets uploader.",
+  "version": "0.0.1",
+  "main": "output/index.js",
+  "types": "output/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "unbywyd",
+  "engines": {
+    "node": ">=18.19.0"
+  },
+  "keywords": [
+    "tsdiapi"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unbywyd/tsdiapi-assets-uploader.git"
+  },
+  "homepage": "https://github.com/unbywyd/tsdiapi-assets-uploader.git",
+  "files": [
+    "output/",
+    "README.md",
+    "LICENSE.md",
+    "tsdiapi.config.json",
+    "files/",
+    "generators/"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "@sinclair/typebox": "^0.34.33",
+    "@tsdiapi/jwt-auth": "^0.2.3",
+    "@tsdiapi/prisma": "^0.2.7",
+    "@tsdiapi/s3": "^2.0.0",
+    "@tsdiapi/server": "^0.2.16",
+    "fastify": "^5.3.0",
+    "reflect-metadata": "^0.2.2",
+    "typedi": "^0.10.0"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.2",
+    "sharp": "^0.33.5"
+  }
+}

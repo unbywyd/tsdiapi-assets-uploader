@@ -1,0 +1,66 @@
+{
+  "name": "tsdiapi-assets-uploader",
+  "description": "A TSDIAPI plugin to extend API functionality with assets uploader.",
+  "generators": [
+    {
+      "name": "controller",
+      "description": "Generate a new controller in the API",
+      "files": [
+        {
+          "source": "generators/controller/*.*",
+          "destination": ".",
+          "overwrite": false,
+          "isHandlebarsTemplate": true
+        }
+      ],
+      "postMessages": [
+        "✅ Controller {{name}} created successfully!"
+      ]
+    }
+  ],
+  "registration": {
+    "pluginImportName": "AssetsUploaderPlugin"
+  },
+  "prisma": {
+    "required": true,
+    "scripts": [
+      {
+        "command": "ADD ENUM AssetType ({IMAGE|VIDEO|DOCUMENT|OTHER});",
+        "description": "Add AssetType enum"
+      },
+      {
+        "command": "ADD ENUM AssetReferenceType ({OTHER});",
+        "description": "Add AssetReferenceType enum"
+      },
+      {
+        "command": "ADD MODEL Asset ({id String @id @default(cuid())|name String?|thumbnailUrl String?|thumbnailKey String?|isPrivate Boolean @default(false)|format String?|type AssetType @default(OTHER)|referenceType AssetReferenceType @default(OTHER)|width Float?|height Float?|mimetype String?|filesize Float?|url String|key String?|s3bucket String?|s3region String?});",
+        "description": "Add Asset model"
+      },
+      {
+        "command": "ADD MODEL User ({id String  @id @default(cuid()) | email String? @unique | phoneNumber String? @unique });",
+        "description": "Add User model to Prisma schema"
+      },
+      {
+        "command": "ADD MODEL Admin ({id String  @id @default(cuid()) | email String? @unique | phoneNumber String @unique | password String | name String? });",
+        "description": "Add Admin model to Prisma schema"
+      },
+      {
+        "command": "ADD RELATION Asset AND User (type=1:M);",
+        "description": "Add relation between Asset and User"
+      },
+      {
+        "command": "ADD RELATION Asset AND Admin (type=1:M);",
+        "description": "Add relation between Asset and Admin"
+      }
+    ]
+  },
+  "requiredPackages": [
+    "@tsdiapi/s3",
+    "@tsdiapi/jwt-auth"
+  ],
+  "postMessages": [
+    "✅ Plugin tsdiapi-assets-uploader has been successfully installed!",
+    "🔑 Use generator 'controller' to create a new controller.",
+    "📖 Check the documentation for more details!"
+  ]
+}

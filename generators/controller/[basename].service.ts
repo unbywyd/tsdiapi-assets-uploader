@@ -104,20 +104,6 @@ export default class AssetService {
                 where: {
                     ...(params.userId ? { userId: params.userId } : {}),
                     ...(params.adminId ? { adminId: params.adminId } : {})
-                },
-                include: {
-                    user: true,
-                    admin: true,
-                    contact: true,
-                    interest: true,
-                    feedbackAsset: true,
-                    offer: true,
-                    category: true,
-                    appointment: true,
-                    specialist: true,
-                    message: true,
-                    report: true,
-                    seeking: true
                 }
             });
             return assets as OutputAssetSchemaType[];
@@ -135,25 +121,10 @@ export default class AssetService {
                 return null;
             }
             const asset = await db.findUnique({
-                where: { id },
-                include: {
-                    user: true,
-                    admin: true,
-                    contact: true,
-                    interest: true,
-                    feedbackAsset: true,
-                    offer: true,
-                    category: true,
-                    appointment: true,
-                    specialist: true,
-                    message: true,
-                    report: true,
-                    seeking: true
-                }
+                where: { id }
             });
 
             if (!asset) return null;
-            //if (asset.userId !== params.userId && asset.adminId !== params.adminId) return null;
 
             return asset as OutputAssetSchemaType;
         } catch (error) {

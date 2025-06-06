@@ -1,6 +1,6 @@
 import { Service } from "typedi";
 import sharp from "sharp";
-import { OutputAssetSchemaType } from "@api/typebox-schemas/models/OutputAssetSchema.model.js";
+import { OutputAssetSchemaType } from "@generated/typebox-schemas/models/OutputAssetSchema.model.js";
 import { Subject } from "rxjs";
 import type { UploadFile } from "@tsdiapi/server";
 import type { UploadFileResponse } from "@tsdiapi/s3";

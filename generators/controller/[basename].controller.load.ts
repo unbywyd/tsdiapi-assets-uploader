@@ -1,7 +1,7 @@
 import { AppContext } from "@tsdiapi/server";
 import { Type } from "@sinclair/typebox";
 import { isBearerValid } from "@tsdiapi/jwt-auth";
-import { OutputAssetSchema } from "@api/typebox-schemas/models/OutputAssetSchema.model.js";
+import { OutputAssetSchema } from "@generated/typebox-schemas/models/OutputAssetSchema.model.js";
 import AssetService from "./{{kebabCase name}}.service.js";
 import { useS3Provider } from "@tsdiapi/s3";
 import { Container } from "typedi";

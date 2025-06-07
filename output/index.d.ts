@@ -1,8 +1,5 @@
 import type { AppContext, AppPlugin } from "@tsdiapi/server";
-export type PluginOptions = {
-    previewSize?: number;
-    generatePreview?: boolean;
-};
+export type PluginOptions = {};
 declare class App implements AppPlugin {
     name: string;
     config: PluginOptions;

@@ -1,7 +1,7 @@
 {
   "name": "@tsdiapi/assets-uploader",
   "description": "A TSDIAPI plugin to extend API functionality with assets uploader.",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "output/index.js",
   "types": "output/index.d.ts",
   "type": "module",

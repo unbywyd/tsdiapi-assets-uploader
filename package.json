@@ -1,7 +1,7 @@
 {
   "name": "@tsdiapi/assets-uploader",
   "description": "A TSDIAPI plugin to extend API functionality with assets uploader.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "output/index.js",
   "types": "output/index.d.ts",
   "type": "module",
@@ -37,12 +37,12 @@
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "@sinclair/typebox": "^0.34.33",
-    "@tsdiapi/jwt-auth": "^0.3.0",
+    "@sinclair/typebox": "^0.34.41",
+    "@tsdiapi/jwt-auth": "^0.4.0",
     "@tsdiapi/prisma": "^0.4.0",
-    "@tsdiapi/s3": "^3.0.0",
-    "@tsdiapi/server": "^0.3.0",
-    "fastify": "^5.3.0",
+    "@tsdiapi/s3": "^3.0.2",
+    "@tsdiapi/server": "^0.4.0",
+    "fastify": "^5.6.2",
     "reflect-metadata": "^0.2.2",
     "typedi": "^0.10.0"
   },
